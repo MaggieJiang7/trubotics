@@ -35,4 +35,13 @@ def preauton():
     inertialSensor.calibrate()
 
 def autonomous():
-    #TODO: make some code that works lmao
+    #TODO: make some code that worhesdfsdfs lmao
+    leftMotor.spin(FORWARD, controller1.axis3.position()/1.1 + (controller1.axis1.position() / 4), PERCENT)
+    rightMotor.spin(FORWARD, controller1.axis3.position()/1.1 - (controller1.axis1.position() / 4), PERCENT)
+
+    if (controller1.buttonL1.pressing()):
+        clawMotor0.spin(REVERSE, 100, PERCENT)
+    elif (controller1.buttonL2.pressing()):
+        clawMotor.spin(FORWARD, 100, PERCENT)
+    else:
+        clawMotor.stop()
