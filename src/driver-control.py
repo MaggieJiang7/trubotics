@@ -1,9 +1,9 @@
 
 # ---------------------------------------------------------------------------- #
 #                                                                              #
-# 	Module:       simple-drivetrain.py                                         #
+# 	Module:       driver-control.py                                            #
 # 	Author:       Maggie Jiang                                                 #
-# 	Created:      09/25/2024, 11:39:50 a.m.                                     #
+# 	Created:      09/25/2024, 11:39:50 a.m.                                    #
 # 	Description:  V5 project                                                   #
 #                                                                              #
 # ---------------------------------------------------------------------------- #
@@ -11,11 +11,11 @@
 # Library imports
 from vex import *
 
-# Brain should be defined
+# Define the brain
 brain=Brain()
 
 # Define the controller
-controller1 = Controller(ControllerType.PRIMARY)
+controller = Controller(ControllerType.PRIMARY)
 # controller2 = Controller(ControllerType.PARTNER)
 
 # Define Motors
@@ -24,8 +24,15 @@ controller1 = Controller(ControllerType.PRIMARY)
 leftMotor = Motor(Ports.PORT20, GearSetting.RATIO_18_1, False)
 rightMotor = Motor(Ports.PORT19, GearSetting.RATIO_18_1, True)
 drivetrain = DriveTrain(leftMotor, rightMotor)
+
 armMotor  = Motor(Ports.PORT9, GearSetting.RATIO_18_1, True) 
 clawMotor = Motor(Ports.PORT8, GearSetting.RATIO_18_1, True)
+
+def pre_auton():
+    # Some cool preauton code!
+
+def autonomous():
+    # Some cool autonomous code! 
 
 def drivercontrol():
     leftMotor.spin(FORWARD, controller1.axis3.position()/1.1 + (controller1.axis1.position() / 4), PERCENT)
@@ -49,4 +56,5 @@ def drivercontrol():
 while True:
     drivercontrol()
 
-        
+# competition = Competition(drivercontrol, autonomous)
+# pre_auton()   
