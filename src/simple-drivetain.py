@@ -1,14 +1,15 @@
+
 # ---------------------------------------------------------------------------- #
 #                                                                              #
 # 	Module:       main.py                                                      #
-# 	Author:                                                                    #
+# 	Author:       Maggie Jiang                                                 #
 # 	Created:      03/26/2024, 4:07:23 p.m.                                     #
 # 	Description:  V5 project                                                   #
 #                                                                              #
 # ---------------------------------------------------------------------------- #
 
 # Library imports
-from vex import
+from vex import *
 
 # Brain should be defined by default
 brain=Brain()
@@ -28,17 +29,12 @@ armMotor1 = Motor(Ports.PORT9, GearSetting.RATIO_18_1, True)
 armMotor2 = Motor(Ports.PORTS10, GearSetting.RATIO_18_1, True)
 clawMotor = Motor(Ports.PORT8, GearSetting.RATIO_18_1, True)
 
-# inertialSensor = Inertial(Ports.PORT9)
-
-
-def preauton():
-    armMotor.set_stopping(HOLD)
-    # inertialSensor.calibrate()
+#inertialSensor = Inertial(Ports.PORT9)
 
 def drivercontrol():
-    #TODO: make some code that worhesdfsdfs lmao
     leftMotor.spin(FORWARD, controller1.axis3.position()/1.1 + (controller1.axis1.position() / 4), PERCENT)
     rightMotor.spin(FORWARD, controller1.axis3.position()/1.1 - (controller1.axis1.position() / 4), PERCENT)
+    armMotor.set_stopping(HOLD)
 
     if (controller1.buttonL1.pressing()):
         armMotor1.spin(REVERSE, 100, PERCENT)
@@ -59,3 +55,5 @@ def drivercontrol():
 
 while True:
     drivercontrol()
+
+        
