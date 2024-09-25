@@ -6,13 +6,13 @@
 	"project": {
 		"name": "trubotics",
 		"description": "",
-		"creationDate": "5/3/2024, 3:38:17 PM",
+		"creationDate": "9/25/2024, 11:39:53 AM",
 		"platform": "V5",
 		"language": "python",
 		"slot": 1,
 		"sdkVersion": "V5_1_0_1_19",
 		"python": {
-			"main": "src/treadmill_horror.py"
+			"main": "src/simple-drivetrain.py"
 		}
 	}
 }
