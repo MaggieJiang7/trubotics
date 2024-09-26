@@ -1,7 +1,7 @@
 # ---------------------------------------------------------------------------- #
 #                                                                              #
 # 	Module:       driver-control.py                                            #
-# 	Author:       Maggie Jiang                                                 #
+# 	Author:       Maggie Jiang                                            #
 # 	Created:      09/25/2024, 11:39:50 a.m.                                    #
 # 	Description:  V5 project                                                   #
 #                                                                              #
